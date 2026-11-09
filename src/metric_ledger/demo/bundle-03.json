@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "source": {
+    "id": "harbor-2026-09",
+    "text": "FICTIONAL DEMO DATA. Harbor Demo update for 2026-09.\nMonthly recurring revenue: $9,000. Paying customers: 45. Customer churn: 6%.\n",
+    "uri": "https://example.com/fictional/harbor/2026-09"
+  },
+  "observations": [
+    {
+      "entity_id": "harbor",
+      "metric_id": "mrr",
+      "period": "2026-09",
+      "value": "9000",
+      "unit": "USD",
+      "evidence": {
+        "start": 80,
+        "end": 86,
+        "quote": "$9,000"
+      },
+      "supersedes": null,
+      "resolves": null
+    },
+    {
+      "entity_id": "harbor",
+      "metric_id": "customers",
+      "period": "2026-09",
+      "value": "45",
+      "unit": "count",
+      "evidence": {
+        "start": 106,
+        "end": 108,
+        "quote": "45"
+      },
+      "supersedes": null,
+      "resolves": null
+    },
+    {
+      "entity_id": "harbor",
+      "metric_id": "churn",
+      "period": "2026-09",
+      "value": "6",
+      "unit": "percent",
+      "evidence": {
+        "start": 126,
+        "end": 128,
+        "quote": "6%"
+      },
+      "supersedes": null,
+      "resolves": null
+    }
+  ]
+}

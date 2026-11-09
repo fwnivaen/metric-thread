@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "source": {
+    "id": "orbit-invalid-proposal",
+    "text": "FICTIONAL DEMO DATA. Orbit Demo reported monthly recurring revenue of $18,000 for 2026-10.\n",
+    "uri": null
+  },
+  "observations": [
+    {
+      "entity_id": "orbit",
+      "metric_id": "mrr",
+      "period": "2026-10",
+      "value": "19000",
+      "unit": "USD",
+      "evidence": {
+        "start": 70,
+        "end": 77,
+        "quote": "$18,000"
+      },
+      "supersedes": null,
+      "resolves": null
+    }
+  ]
+}

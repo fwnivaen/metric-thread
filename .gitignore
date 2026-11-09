@@ -1,0 +1,17 @@
+.venv/
+.bootstrap/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+.env
+.env.*
+!.env.example
+*.duckdb
+*.duckdb.*
+workspace/
+private/
+.DS_Store
+CHECKPOINT.md

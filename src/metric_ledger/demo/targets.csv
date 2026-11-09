@@ -1,0 +1,10 @@
+entity_id,metric_id,period,value,unit,comparison,note
+cedar,mrr,2026-10,26000,USD,at_least,Fictional October operating plan
+cedar,customers,2026-10,110,count,at_least,Fictional October operating plan
+cedar,churn,2026-10,4,percent,at_most,Fictional October operating plan
+orbit,mrr,2026-10,20000,USD,at_least,Fictional October operating plan
+orbit,customers,2026-10,90,count,at_least,Fictional October operating plan
+orbit,churn,2026-10,3,percent,at_most,Fictional October operating plan
+harbor,mrr,2026-10,10000,USD,at_least,Fictional October operating plan
+harbor,customers,2026-10,50,count,at_least,Fictional October operating plan
+harbor,churn,2026-10,5,percent,at_most,Fictional October operating plan

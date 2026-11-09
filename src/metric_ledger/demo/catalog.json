@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "entities": [
+    {
+      "id": "cedar",
+      "name": "Cedar Demo"
+    },
+    {
+      "id": "orbit",
+      "name": "Orbit Demo"
+    },
+    {
+      "id": "harbor",
+      "name": "Harbor Demo"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "mrr",
+      "label": "Monthly recurring revenue",
+      "unit": "USD",
+      "definition": "Recurring contracted revenue for this month, excluding one-time fees."
+    },
+    {
+      "id": "customers",
+      "label": "Paying customers",
+      "unit": "count",
+      "definition": "Active paying customer accounts at the end of the reporting month."
+    },
+    {
+      "id": "churn",
+      "label": "Customer churn",
+      "unit": "percent",
+      "definition": "Paying customer accounts lost during the month / paying accounts at the start, expressed as a percentage."
+    }
+  ],
+  "expected": [
+    {
+      "entity_id": "cedar",
+      "metric_id": "mrr"
+    },
+    {
+      "entity_id": "cedar",
+      "metric_id": "customers"
+    },
+    {
+      "entity_id": "cedar",
+      "metric_id": "churn"
+    },
+    {
+      "entity_id": "orbit",
+      "metric_id": "mrr"
+    },
+    {
+      "entity_id": "orbit",
+      "metric_id": "customers"
+    },
+    {
+      "entity_id": "orbit",
+      "metric_id": "churn"
+    },
+    {
+      "entity_id": "harbor",
+      "metric_id": "mrr"
+    },
+    {
+      "entity_id": "harbor",
+      "metric_id": "customers"
+    },
+    {
+      "entity_id": "harbor",
+      "metric_id": "churn"
+    }
+  ]
+}

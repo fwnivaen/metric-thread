@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "source": {
+    "id": "cedar-2026-10",
+    "text": "FICTIONAL DEMO DATA. Cedar Demo update for 2026-10.\nMonthly recurring revenue: $24,000. Paying customers: 120. Customer churn: 3.5%.\n",
+    "uri": "https://example.com/fictional/cedar/2026-10"
+  },
+  "observations": [
+    {
+      "entity_id": "cedar",
+      "metric_id": "mrr",
+      "period": "2026-10",
+      "value": "24000",
+      "unit": "USD",
+      "evidence": {
+        "start": 79,
+        "end": 86,
+        "quote": "$24,000"
+      },
+      "supersedes": null,
+      "resolves": null
+    },
+    {
+      "entity_id": "cedar",
+      "metric_id": "customers",
+      "period": "2026-10",
+      "value": "120",
+      "unit": "count",
+      "evidence": {
+        "start": 106,
+        "end": 109,
+        "quote": "120"
+      },
+      "supersedes": null,
+      "resolves": null
+    },
+    {
+      "entity_id": "cedar",
+      "metric_id": "churn",
+      "period": "2026-10",
+      "value": "3.5",
+      "unit": "percent",
+      "evidence": {
+        "start": 127,
+        "end": 131,
+        "quote": "3.5%"
+      },
+      "supersedes": null,
+      "resolves": null
+    }
+  ]
+}

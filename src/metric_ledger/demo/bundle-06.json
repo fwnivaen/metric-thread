@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "source": {
+    "id": "cedar-2026-10-correction",
+    "text": "FICTIONAL DEMO DATA. Cedar Demo correction for 2026-10: monthly recurring revenue was $25,000, replacing the previously reported figure.\n",
+    "uri": "https://example.com/fictional/cedar/2026-10/correction"
+  },
+  "observations": [
+    {
+      "entity_id": "cedar",
+      "metric_id": "mrr",
+      "period": "2026-10",
+      "value": "25000",
+      "unit": "USD",
+      "evidence": {
+        "start": 86,
+        "end": 93,
+        "quote": "$25,000"
+      },
+      "supersedes": "56c7f2c01b70db626fb76921a7809e2295eb8260ce72e0a7575dfa6b47fe7349",
+      "resolves": null
+    }
+  ]
+}

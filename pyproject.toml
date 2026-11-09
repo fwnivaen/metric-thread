@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "metric-ledger"
+version = "0.1.0"
+description = "Turn business updates into a metric history you can trace, correct and audit."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Nivaen Giritharan"}]
+keywords = ["agents", "metrics", "duckdb", "langextract", "data-quality", "provenance"]
+dependencies = ["duckdb>=1.5.6,<2", "pydantic>=2.10,<3"]
+
+[project.optional-dependencies]
+extract = ["langextract>=1.7.2,<2"]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1", "build>=1.2,<2"]
+
+[project.scripts]
+metric-ledger = "metric_ledger.cli:main"
+
+[project.urls]
+Repository = "https://github.com/fwnivaen/metric-ledger"
+Issues = "https://github.com/fwnivaen/metric-ledger/issues"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+# The self-contained HTML/CSS template keeps markup on readable, unsplit lines.
+"src/metric_ledger/report.py" = ["E501"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/metric_ledger"]

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "source": {
+    "id": "orbit-2026-09",
+    "text": "FICTIONAL DEMO DATA. Orbit Demo update for 2026-09.\nMonthly recurring revenue: $16,000. Paying customers: 80. Customer churn: 5%.\n",
+    "uri": "https://example.com/fictional/orbit/2026-09"
+  },
+  "observations": [
+    {
+      "entity_id": "orbit",
+      "metric_id": "mrr",
+      "period": "2026-09",
+      "value": "16000",
+      "unit": "USD",
+      "evidence": {
+        "start": 79,
+        "end": 86,
+        "quote": "$16,000"
+      },
+      "supersedes": null,
+      "resolves": null
+    },
+    {
+      "entity_id": "orbit",
+      "metric_id": "customers",
+      "period": "2026-09",
+      "value": "80",
+      "unit": "count",
+      "evidence": {
+        "start": 106,
+        "end": 108,
+        "quote": "80"
+      },
+      "supersedes": null,
+      "resolves": null
+    },
+    {
+      "entity_id": "orbit",
+      "metric_id": "churn",
+      "period": "2026-09",
+      "value": "5",
+      "unit": "percent",
+      "evidence": {
+        "start": 126,
+        "end": 128,
+        "quote": "5%"
+      },
+      "supersedes": null,
+      "resolves": null
+    }
+  ]
+}
