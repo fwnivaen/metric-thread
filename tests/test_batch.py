@@ -3,9 +3,9 @@ import json
 import pytest
 from conftest import DEMO
 
-from metric_ledger.cli import main
-from metric_ledger.ledger import Ledger, LedgerError
-from metric_ledger.models import Bundle
+from metric_thread.cli import main
+from metric_thread.ledger import Ledger, LedgerError
+from metric_thread.models import Bundle
 
 
 def test_batch_can_be_retried_without_duplicating_corrections(tmp_path, capsys):

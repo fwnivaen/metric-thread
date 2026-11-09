@@ -1,16 +1,16 @@
-# MetricLedger
+# MetricThread
 
-[![Checks](https://github.com/fwnivaen/metric-ledger/actions/workflows/checks.yml/badge.svg)](https://github.com/fwnivaen/metric-ledger/actions/workflows/checks.yml)
+[![Checks](https://github.com/fwnivaen/metric-thread/actions/workflows/checks.yml/badge.svg)](https://github.com/fwnivaen/metric-thread/actions/workflows/checks.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-304bba)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **Turn business updates into a metric history you can trace, correct and report.**
 
-An agent reads a client update. MetricLedger checks that the proposed number actually appears in the supplied source, keeps the original when a correction arrives, and reports missed targets and missing updates. Every accepted value has a source ID, text span and content hash.
+An agent reads a client update. MetricThread checks that the proposed number actually appears in the supplied source, keeps the original when a correction arrives, and reports missed targets and missing updates. Every accepted value has a source ID, text span and content hash.
 
-Created and maintained by **Nivaen Giritharan**. MetricLedger is the working name for this first release.
+Created and maintained by **Nivaen Giritharan**.
 
-![Fictional MetricLedger report with targets and source evidence](docs/preview.png)
+![Fictional MetricThread report with targets and source evidence](docs/preview.png)
 
 [Download the self-contained fictional report](docs/demo-report.html), or generate it locally with the command below.
 
@@ -31,8 +31,8 @@ Business update ── LangExtract or your agent ── Proposed JSON bundle
 Requires Python 3.11 or later. All example organizations, updates, values and targets are fictional.
 
 ```bash
-git clone https://github.com/fwnivaen/metric-ledger.git
-cd metric-ledger
+git clone https://github.com/fwnivaen/metric-thread.git
+cd metric-thread
 python -m venv .venv
 ```
 
@@ -40,7 +40,7 @@ Activate the environment with `source .venv/bin/activate` on macOS/Linux, or `.v
 
 ```bash
 python -m pip install -e ".[extract]"
-metric-ledger demo --output workspace/demo --replay-extraction
+metric-thread demo --output workspace/demo --replay-extraction
 ```
 
 Open `workspace/demo/report.html` in your browser. The command also writes a JSON report, CSV export, complete fact history and review decisions.
@@ -70,7 +70,7 @@ No API key is needed. Replay runs the real LangExtract parsing/alignment pipelin
 | [DuckDB](https://github.com/duckdb/duckdb) | Embedded analytical storage, revision queries and prior-period windows | MIT |
 | [Pydantic](https://github.com/pydantic/pydantic) | Strict JSON contracts, exact decimal validation and generated schemas | MIT |
 
-MetricLedger's own code connects these libraries through metric definitions, evidence checks, correction chains, review decisions, explicit target rules and the reporting workflow. See [THIRD_PARTY.md](THIRD_PARTY.md) for attribution.
+MetricThread's own code connects these libraries through metric definitions, evidence checks, correction chains, review decisions, explicit target rules and the reporting workflow. See [THIRD_PARTY.md](THIRD_PARTY.md) for attribution.
 
 ## Run it with your own agent
 
@@ -79,12 +79,12 @@ MetricLedger's own code connects these libraries through metric definitions, evi
 3. Review proposals, then ingest the reviewed bundles.
 4. Run a monthly report against your explicitly supplied targets.
 
-Use `metric-ledger init workspace/example` to inspect fictional input files. For real inputs, use a new database and your own catalog. Keep private inputs and generated reports under `private/` or `workspace/`, which are ignored by Git.
+Use `metric-thread init workspace/example` to inspect fictional input files. For real inputs, use a new database and your own catalog. Keep private inputs and generated reports under `private/` or `workspace/`, which are ignored by Git.
 
 ### One command for a batch
 
 ```bash
-metric-ledger run --catalog private/catalog.json --db private/metrics.duckdb \
+metric-thread run --catalog private/catalog.json --db private/metrics.duckdb \
   --inbox private/reviewed-bundles --period 2026-10 \
   --targets private/targets.csv --output private/reports/2026-10 --fail-on-review
 ```
@@ -96,11 +96,11 @@ For the exported fictional workspace, use `--inbox workspace/example --pattern '
 ### Integrate an individual update
 
 ```bash
-metric-ledger schema bundle
-metric-ledger status --catalog private/catalog.json --db private/metrics.duckdb
-metric-ledger ingest --catalog private/catalog.json --db private/metrics.duckdb \
+metric-thread schema bundle
+metric-thread status --catalog private/catalog.json --db private/metrics.duckdb
+metric-thread ingest --catalog private/catalog.json --db private/metrics.duckdb \
   --bundle private/reviewed-bundles/update.json --expected-revision 0 --fail-on-review
-metric-ledger review --catalog private/catalog.json --db private/metrics.duckdb
+metric-thread review --catalog private/catalog.json --db private/metrics.duckdb
 ```
 
 Use the revision returned by `status`; `0` above applies only to an empty ledger. Commands emit JSON on stdout; operation errors go to stderr. Exit codes are `0` for success, `2` for invalid input/configuration, and `3` for review items when `--fail-on-review` is set. A batch returns `3` while any current review item remains open.
@@ -112,7 +112,7 @@ Agents with authorized command/file access can use the same contracts regardless
 Configure a supported provider following [LangExtract's instructions](https://github.com/google/langextract#installation), then choose its model ID explicitly:
 
 ```bash
-metric-ledger extract --catalog private/catalog.json --source private/update.txt \
+metric-thread extract --catalog private/catalog.json --source private/update.txt \
   --source-id client-october-update --model YOUR_CONFIGURED_MODEL_ID \
   --output private/proposed-update.json
 ```
@@ -122,7 +122,7 @@ This writes a **proposal**, not an accepted fact. Inspect the bundle and extract
 ### Reproduce a prior report
 
 ```bash
-metric-ledger report --catalog workspace/demo/catalog.json --db workspace/demo/ledger.duckdb \
+metric-thread report --catalog workspace/demo/catalog.json --db workspace/demo/ledger.duckdb \
   --period 2026-10 --targets workspace/demo/targets.csv --as-of 15
 ```
 
@@ -151,4 +151,4 @@ uv run python -m build
 
 The tests cover the full fictional workflow, real LangExtract alignment with fixture output, incorrect model proposals, exact decimals, unit conflicts, Unicode spans, revisions, review resolution, batch retries, output escaping and workspace preservation. GitHub checks run on Linux/Python 3.11 and 3.13 and Windows/Python 3.12, including an installed-wheel demo.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Original MetricLedger code is [MIT licensed](LICENSE).
+See [CONTRIBUTING.md](CONTRIBUTING.md). Original MetricThread code is [MIT licensed](LICENSE).

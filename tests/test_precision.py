@@ -1,7 +1,7 @@
 from decimal import Decimal
 
-from metric_ledger.ledger import Ledger
-from metric_ledger.models import Bundle, value_from_quote
+from metric_thread.ledger import Ledger
+from metric_thread.models import Bundle, value_from_quote
 
 
 def test_source_number_cannot_be_rounded_to_match_a_different_candidate(catalog):

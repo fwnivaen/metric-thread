@@ -3,7 +3,7 @@ requires = ["hatchling>=1.27,<2"]
 build-backend = "hatchling.build"
 
 [project]
-name = "metric-ledger"
+name = "metric-thread"
 version = "0.1.0"
 description = "Turn business updates into a metric history you can trace, correct and audit."
 readme = "README.md"
@@ -18,11 +18,11 @@ extract = ["langextract>=1.7.2,<2"]
 dev = ["pytest>=8,<10", "ruff>=0.11,<1", "build>=1.2,<2"]
 
 [project.scripts]
-metric-ledger = "metric_ledger.cli:main"
+metric-thread = "metric_thread.cli:main"
 
 [project.urls]
-Repository = "https://github.com/fwnivaen/metric-ledger"
-Issues = "https://github.com/fwnivaen/metric-ledger/issues"
+Repository = "https://github.com/fwnivaen/metric-thread"
+Issues = "https://github.com/fwnivaen/metric-thread/issues"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -37,7 +37,7 @@ select = ["E", "F", "I", "UP", "B", "SIM"]
 
 [tool.ruff.lint.per-file-ignores]
 # The self-contained HTML/CSS template keeps markup on readable, unsplit lines.
-"src/metric_ledger/report.py" = ["E501"]
+"src/metric_thread/report.py" = ["E501"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/metric_ledger"]
+packages = ["src/metric_thread"]

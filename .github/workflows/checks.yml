@@ -32,7 +32,7 @@ jobs:
       - run: uv run --no-sync ruff check src tests
       - run: uv run --no-sync ruff format --check src tests
       - run: uv run --no-sync pytest -q
-      - run: uv run --no-sync metric-ledger demo --output workspace/ci-demo --replay-extraction
+      - run: uv run --no-sync metric-thread demo --output workspace/ci-demo --replay-extraction
       - run: uv run --no-sync python -m build
       - name: Install built wheel and verify packaged example
         shell: bash
@@ -41,4 +41,4 @@ jobs:
           uv pip install --python wheel-env --no-deps dist/*.whl
           uv pip install --python wheel-env 'duckdb>=1.5.6,<2' 'pydantic>=2.10,<3'
           if [ -x wheel-env/bin/python ]; then PY=wheel-env/bin/python; else PY=wheel-env/Scripts/python.exe; fi
-          "$PY" -m metric_ledger demo --output workspace/wheel-demo
+          "$PY" -m metric_thread demo --output workspace/wheel-demo

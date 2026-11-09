@@ -1,6 +1,6 @@
 # Data contracts
 
-All formats have `schema_version: 1`. Unknown fields are rejected. Generate full JSON Schemas with `metric-ledger schema catalog`, `schema bundle` and `schema targets`.
+All formats have `schema_version: 1`. Unknown fields are rejected. Generate full JSON Schemas with `metric-thread schema catalog`, `schema bundle` and `schema targets`.
 
 ## Catalog
 

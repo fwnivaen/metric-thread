@@ -1,6 +1,6 @@
 # Open-source attribution
 
-MetricLedger's original workflow and application code is copyright 2026 Nivaen Giritharan, under the MIT license.
+MetricThread's original workflow and application code is copyright 2026 Nivaen Giritharan, under the MIT license.
 
 It uses these upstream packages as dependencies; their source is not vendored into this repository:
 

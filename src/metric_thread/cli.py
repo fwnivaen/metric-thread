@@ -44,7 +44,7 @@ def initialize(path: Path) -> None:
     if path.exists() and (not path.is_dir() or any(path.iterdir())):
         raise ValueError("Choose an empty or new workspace; existing files are preserved")
     path.mkdir(parents=True, exist_ok=True)
-    root = resources.files("metric_ledger").joinpath("demo")
+    root = resources.files("metric_thread").joinpath("demo")
     for item in root.iterdir():
         if item.is_file():
             (path / item.name).write_text(item.read_text(encoding="utf-8"), encoding="utf-8")
@@ -94,7 +94,7 @@ def parser() -> argparse.ArgumentParser:
     root = argparse.ArgumentParser(
         description="Evidence-backed metric history for people and agents"
     )
-    root.add_argument("--version", action="version", version="metric-ledger 0.1.0")
+    root.add_argument("--version", action="version", version="metric-thread 0.1.0")
     commands = root.add_subparsers(dest="command", required=True)
     init = commands.add_parser("init", help="Write fictional example inputs into a new workspace")
     init.add_argument("directory")

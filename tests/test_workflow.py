@@ -6,10 +6,10 @@ from decimal import Decimal
 import pytest
 from pydantic import ValidationError
 
-from metric_ledger.cli import main, run_demo
-from metric_ledger.ledger import Ledger, LedgerError
-from metric_ledger.models import Bundle, Catalog, TargetSet, value_from_quote
-from metric_ledger.report import render_csv, render_html, safe_link
+from metric_thread.cli import main, run_demo
+from metric_thread.ledger import Ledger, LedgerError
+from metric_thread.models import Bundle, Catalog, TargetSet, value_from_quote
+from metric_thread.report import render_csv, render_html, safe_link
 
 
 def bundle(source_id="source-1", token="$12,000", value="12000", **changes):

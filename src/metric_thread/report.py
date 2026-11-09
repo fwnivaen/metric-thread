@@ -71,7 +71,7 @@ def render_html(report: dict) -> str:
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
-<title>MetricLedger · {esc(report["period"])}</title>
+<title>MetricThread · {esc(report["period"])}</title>
 <style>
 :root{{color-scheme:light dark;--bg:#f6f7fb;--panel:#fff;--ink:#182234;--muted:#526176;--line:#d8dfe9;--accent:#304bba}}
 @media(prefers-color-scheme:dark){{:root{{--bg:#11151e;--panel:#191f2b;--ink:#ecf0f8;--muted:#b4bfd0;--line:#38445a;--accent:#a8baff}}}}
@@ -88,7 +88,7 @@ small{{display:block;color:var(--muted);font-size:12px}}.numeric{{font-variant-n
 code{{font-size:11px;overflow-wrap:anywhere}}a{{color:var(--accent)}}a:focus-visible,summary:focus-visible{{outline:3px solid var(--accent);outline-offset:4px}}
 footer{{font-size:12px;margin-top:24px}}@media(max-width:640px){{main{{padding:24px 16px}}.cards{{grid-template-columns:repeat(2,1fr);gap:12px}}.card{{padding:16px}}}}
 </style></head><body><main>
-<header><span class="eyebrow">MetricLedger / Monthly close</span><h1>Numbers with receipts.</h1>
+<header><span class="eyebrow">MetricThread / Monthly close</span><h1>Numbers with receipts.</h1>
 <p>{esc(report["period"])} · Ledger revision {report["revision"]} · Every accepted number has a checked value span.</p></header>
 <section aria-label="Report summary" class="cards">{cards}</section>
 <h2>What needs attention?</h2><p>Expand evidence to inspect the source. Change compares with the previous available reported period; it may span a missing month.</p>
@@ -99,7 +99,7 @@ footer{{font-size:12px;margin-top:24px}}@media(max-width:640px){{main{{padding:2
 <p>Value spans and numeric agreement are checked; interpretation of entity, period and metric remains reviewable.
 Explicit targets only. No automatic unit conversion.</p><p>Catalog SHA-256 <code>{esc(report["catalog_sha256"])}</code><br>
 Target set SHA-256 <code>{esc(report["targets_sha256"] or "none")}</code></p>
-<p>Created with MetricLedger by Nivaen Giritharan.</p></footer>
+<p>Created with MetricThread by Nivaen Giritharan.</p></footer>
 </main></body></html>"""
 
 

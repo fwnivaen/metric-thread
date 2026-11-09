@@ -1,6 +1,6 @@
-# Working in MetricLedger
+# Working in MetricThread
 
-This repository implements Nivaen Giritharan's standalone metric evidence workflow. The public example is entirely fictional. MetricLedger is the provisional name; the owner will choose final branding.
+This repository implements Nivaen Giritharan's standalone metric evidence workflow. The public example is entirely fictional.
 
 - Read `docs/AGENT_WORKFLOW.md` to operate it with an agent and `docs/DATA_CONTRACTS.md` before changing schemas.
 - Preserve exact decimal values, numeric source checks, immutable source IDs and append-only fact/correction history.

@@ -991,7 +991,7 @@ wheels = [
 ]
 
 [[package]]
-name = "metric-ledger"
+name = "metric-thread"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

@@ -1,9 +1,9 @@
 import pytest
 from conftest import DEMO
 
-from metric_ledger.extract import extract_bundle, replay_model
-from metric_ledger.ledger import Ledger
-from metric_ledger.models import Bundle, Source
+from metric_thread.extract import extract_bundle, replay_model
+from metric_thread.ledger import Ledger
+from metric_thread.models import Bundle, Source
 
 pytest.importorskip("langextract")
 
